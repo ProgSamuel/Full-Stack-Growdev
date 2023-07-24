@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="mudarTexto()">Clique aqui para mudar o texto</button>
+    <p id="paragrafo">AQUI VAI APARECER ALGUMA COISA...</p>
+
+    <script>
+      function mudarTexto() {
+        const nome = prompt("Digite seu nome: ");
+        if (nome) {
+          const mudarP = document.getElementById("paragrafo");
+
+          mudarP.innerHTML = `E aí ${nome}! Você está deixando o seu site dinâmico.`;
+        }
+      }
+    </script>
+  </body>
+</html>
