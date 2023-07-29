@@ -1,0 +1,31 @@
+body{
+    margin: 3%;
+}
+
+form{
+   font-size: 1rem;
+   line-height: 1.7rem;
+}
+
+input{
+    height: 1rem;
+}
+
+textarea {
+    width: 75%;
+    height: auto;
+    margin: 6px;
+}
+
+label{
+    margin: 10px;
+}
+
+.button{
+    height: 1.8rem;
+}
+
+fieldset{
+    margin-bottom: 10px
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <main>
+      <h1>Formulário</h1>
+
+      <form action="" id="formulario">
+        <!-- DADOS PESSOAIS -->
+        <fieldset id="pessoais">
+          <legend>Dados Pessoais</legend>
+          <label for="nome"> Nome:</label>
+          <input type="text" id="nome" name="nome" required /> <br />
+
+          <label for="endereco"> Endereço:</label>
+          <input type="text" id="endereco" name="endereco" required /> <br />
+
+          <label for="cidade"> Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required /> <br />
+
+          <label for="estado"> Estado:</label>
+          <select id="estados" name="estado" required>
+            <option value="" selected disabled>Carregando...</option>
+          </select>
+          <br />
+        </fieldset>
+
+        <!-- DADOS PROFISSIONAIS -->
+        <fieldset id="profissionais">
+          <legend>Dados Profissionais</legend>
+
+          <label id="naturCargo">
+            Natureza do cargo <br>
+            <input type="radio" name="cargo" value="GER" checked /> Gerência
+            <input type="radio" name="cargo" value="FIN" /> Financeiro
+            <input type="radio" name="cargo" value="REC" /> Recepção
+            <input type="radio" name="cargo" value="ADM" /> Administrativo
+            <input type="radio" name="cargo" value="JUR" /> Jurídico
+          </label> <br> <br>
+
+          <label id="area">
+            Área de Interesse <br>
+            <input type="checkbox" name="cargo" value="COMP" required/> Computação
+            <input type="checkbox" name="cargo" value="BIO" /> Biologia
+            <input type="checkbox" name="cargo" value="MEI" /> Meio Ambiente
+            <input type="checkbox" name="cargo" value="ENG" /> Engenharia
+            <input type="checkbox" name="cargo" value="HIS" /> História
+          </label>
+
+          <p>
+            Mini-curriculo:<textarea name="miniCurriculo" cols="20" rows="5" id="miniCurriculo" ></textarea>
+          </p>
+        </fieldset>
+
+        <!-- CAMPO ENVIO E LIMPAR -->
+        <input type="submit" value="Enviar" class="button" >
+        <input type ="reset" value="Limpar" class="button" />
+      </form>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
