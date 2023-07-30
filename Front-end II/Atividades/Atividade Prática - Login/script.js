@@ -1,9 +1,5 @@
 const formulario = document.getElementById("formulario");
 
-fetch("https://api-recados-fnzo.onrender.com/")
-  .then((response) => response.json())
-  .then((data) => preencherEstados(data));
-
 formulario.addEventListener("submit", function (event) {
   event.preventDefault();
 

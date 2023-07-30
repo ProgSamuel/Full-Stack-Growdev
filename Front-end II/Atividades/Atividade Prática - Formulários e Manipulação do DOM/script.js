@@ -1,7 +1,7 @@
 function preencherEstados(estados) {
   const selectEstados = document.getElementById("estados");
   selectEstados.innerHTML =
-    '<option value="" selected disabled>Selecione um estado</option>';
+    '<option value="" selected disabled> Selecione um estado </option>';
 
   estados.sort((a, b) => a.nome.localeCompare(b.nome)); 
 

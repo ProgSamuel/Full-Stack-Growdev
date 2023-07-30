@@ -1,14 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  width: 40%;
+  height: auto;
+}
+
+/* Estilo para o formulário */
 form {
-  max-width: 300px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #f4f7f8;
+  padding: 8%;
+  border-radius: 15px;
 }
 
-label,
 input {
-  display: block;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
 }
 
-button {
-  margin-top: 10px;
+.btn {
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+  padding: 2%;
+  border-radius: 10px;
+  color: white;
+}
+
+#Sign {
+  background-color:  #2C3E50;
+}
+
+#Started {
+    background-color: #3498DB;
+
 }
