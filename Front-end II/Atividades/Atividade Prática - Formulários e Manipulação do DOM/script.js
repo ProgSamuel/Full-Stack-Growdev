@@ -3,7 +3,7 @@ function preencherEstados(estados) {
   selectEstados.innerHTML =
     '<option value="" selected disabled>Selecione um estado</option>';
 
-  estados.sort((a, b) => a.nome.localeCompare(b.nome)); // Ordenar estados em ordem alfabética
+  estados.sort((a, b) => a.nome.localeCompare(b.nome)); 
 
   estados.forEach((estado) => {
     const option = document.createElement("option");
