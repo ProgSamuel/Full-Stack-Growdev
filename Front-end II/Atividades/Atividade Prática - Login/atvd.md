@@ -13,7 +13,7 @@ e Cadastre-se).
 [ok] 2. Ambos os campos são obrigatórios.
 
 [ok] 5. Crie um evento para submeter o Login ao clicar no botão “Login”.
-[ ] 6. Crie uma função Javascript para tratar o evento e para submeter o formulário de Login.
+[ok] 6. Crie uma função Javascript para tratar o evento e para submeter o formulário de Login.
 [ ] 7. Construa a integração da página com o Login do back-end que foi desenvolvido nos módulos anteriores.
 [ ] 8. Em caso de sucesso: direcione o cliente para a tela da lista de recados.
 [ ] 9. Em caso de erro: Mostre um alerta informando o erro.
