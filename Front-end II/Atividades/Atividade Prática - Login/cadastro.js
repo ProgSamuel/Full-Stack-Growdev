@@ -6,18 +6,17 @@ formularioCadastro.addEventListener("submit", function (e) {
   const email = e.target.email.value;
   const password = e.target.password.value;
 
-
-  axios.post('https://api-recados-fnzo.onrender.com/cadastrar-usuario', {
-        nome: name,
-        email: email,
-        senha: password,
-      })
-      .then(function (param) {
-        console.log(param)
-        alert('Usuario cadastrado com sucesso')
-      }).catch(function (param) {
-        console.log(param)
-        alert('Erro ao cadastrar usuario')
-        alert(param.response.data)
-      })
+  axios
+    .post("https://api-recados-fnzo.onrender.com/cadastrar-usuario", {
+      nome: name,
+      email: email,
+      senha: password,
+    })
+    .then(function (param) {
+      alert(param.data);
+    })
+    .catch(function (param) {
+      alert("Erro ao cadastrar usuario");
+      alert(param.response.data);
+    });
 });
