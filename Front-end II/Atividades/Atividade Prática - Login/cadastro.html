@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title> Login </title>
+    <title> Cadastro </title>
 </head>
 <body>
     <main>
-        <form action="" id="formulario">
+        
+        <form action="" id="formularioCadastro" >
+            
+            Name <input type="text" id="name" required>
             Email <input type="email" name="email" id="email" required> 
             Password <input type="password" name="password" id="password"  required> 
-             <input type="submit" name="login" value="Sign In" id="Sign" class="btn"> 
-             <input type="button" value="Get Started" id="Started" class="btn"> 
-
+            <input type="submit" name="login" value="Register" id="Started" class="btn">
+           <a href="./login.html"><input type="button" value="Go Back" class="btn" id="Sign"></a>
         </form>
     </main>
-<script src="./script.js"></script>
+<script src="./cadastro.js"></script>
 </body>
 </html>
 

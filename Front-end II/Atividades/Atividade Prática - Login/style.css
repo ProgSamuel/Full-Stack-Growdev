@@ -21,16 +21,27 @@ form {
 }
 
 input {
-  margin-bottom: 2%;
+  line-height: 2rem;
+  border-radius: 5px;
+  margin-top: 1%;
+  margin-bottom: 3%;
 }
 
-.btn {
+a {
+  display: inherit;
+  text-decoration: none;  
+}
+
+
+.btn{
   width: 70%;
   margin: auto;
   margin-top: 3%;
-  padding: 2%;
+  padding: 1%;
   border-radius: 10px;
   color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 #Sign {
