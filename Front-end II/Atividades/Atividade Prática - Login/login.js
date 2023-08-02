@@ -13,7 +13,8 @@ formularioLogin.addEventListener("submit", function (event) {
         senha: password,
       })
       .then(function (param) {
-        alert('Login successful!')
+        console.log('Login successful!')
+        window.location.href="./recados.html"
       }).catch(function (param) {
         console.log(param)
         alert(`
