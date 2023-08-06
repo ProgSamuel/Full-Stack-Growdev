@@ -43,6 +43,10 @@ a {
   font-weight: 500;
 }
 
+.btn:hover{
+  cursor: pointer;
+}
+
 #Sign {
   background-color:  #2C3E50;
 }
