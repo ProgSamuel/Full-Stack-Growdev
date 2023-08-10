@@ -16,10 +16,10 @@ formularioLogin.addEventListener("submit", function (event) {
     })
     .then(function (param) {
       // enviar userId para o localstorage
-      // localStorage.setItem("idUsuario", param.data.idUsuario);
+      // localStorage.setItem("userId", param.data.idUsuario);
+      // logger.info("" + param.date.usuarioEncontrado)
+localStorage.setItem("RESPOSTA", param.data);
       console.log("Login successful!");
-      console.log(param.data.idUsuario);
-
       window.location.href = "./recados.html";
     })
     .catch(function (param) {
