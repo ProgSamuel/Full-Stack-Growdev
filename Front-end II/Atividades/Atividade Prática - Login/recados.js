@@ -24,9 +24,12 @@ async function exibirRecados(idUsuario, page) {
     .map((recado) => `<li>${recado.idRecado} - ${recado.titulo} - ${recado.descricao}</li>`)
     .join(""); // Use .join("") para transformar o array em uma única string
 
+    identificador = parseInt(recados.idUsuario);
+
     recadosContainer.innerHTML = `
     <ul>${recadosList ||  "Não há recados aqui!"}</ul>
 
+    <p> O seu ID é${identificador} </p>
     <div  class="pe">
     <button onclick="prevPage(${recados.pagina_atual - 1})" ${recados.pagina_atual === 1 ? 'disabled' : ''}> Página anterior</button>
     <p>Página ${recados.pagina_atual} de ${recados.total_paginas}</p>

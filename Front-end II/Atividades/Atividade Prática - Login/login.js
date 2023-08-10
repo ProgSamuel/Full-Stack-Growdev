@@ -1,4 +1,3 @@
-
 const formularioLogin = document.getElementById("formularioLogin");
 
 formularioLogin.addEventListener("submit", function (event) {
@@ -7,7 +6,7 @@ formularioLogin.addEventListener("submit", function (event) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  console.log( email, password);
+  console.log(email, password);
 
   axios
     .post("https://api-recados-fnzo.onrender.com/login/", {
@@ -18,7 +17,9 @@ formularioLogin.addEventListener("submit", function (event) {
       // enviar userId para o localstorage
       // localStorage.setItem("userId", param.data.idUsuario);
       // logger.info("" + param.date.usuarioEncontrado)
-localStorage.setItem("RESPOSTA", param.data);
+      // localStorage.setItem("RESPOSTA", param.data);
+
+      // alert("feito");
       console.log("Login successful!");
       window.location.href = "./recados.html";
     })
