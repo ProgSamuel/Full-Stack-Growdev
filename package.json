@@ -1,0 +1,11 @@
+{
+  "name": "full-stack-growdev",
+  "version": "1.0.0",
+  "description": "aulas a partir do módulo front-end 2",
+  "main": "teste.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
