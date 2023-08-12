@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.emVolta {
+  height: 100px;
+  width: 100px;
+  background-color: aquamarine;
+  animation: slide 3s infinite ease-in-out;
+}
+
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(calc(100vw - 100px));
+      background-color: blueviolet;
+    }
+    50% {
+      transform: translateY(calc(100vh - 100px)) translateX(calc(100vw - 100px));
+      background-color: brown;
+    }
+    75% {
+      transform: translateY(calc(100vh - 100px));
+      background-color: gray;
+    }
+    100% {
+      transform: translateY(0);
+      background-color: olive;
+    }
+  }
+
+  img{
+    width: 80px;
+  }
+
+.caindo{
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    height: 100px;
+    width: 100px;
+    animation: caiu 2s infinite ease-in-out;
+}
+
+@keyframes caiu {
+    0%{
+        transform: translatey(0);
+    }
+    100%{
+        transform: translatey(calc(100vh - 100px));
+    }
+    
+}
+
+#america{
+    position: fixed;
+    top: 0;
+    left: 0%;
+  
+    animation: caiu 2s infinite ease-in-out;
+}
+
+#vasco{
+    position: fixed;
+    top: 0;
+    left: 15%;
+    
+    animation: caiu 3s infinite  ease-in-out;
+
+}
+
+#coritiba{
+
+    position: fixed;
+    top: 0;
+    left: 30%;
+    animation: caiu 3.5s infinite ease-in-out;
+}
+
+#santos{
+    position: fixed;
+    top: 0;
+    left: 45%;
+    animation: caiu 4.5s infinite ease-in-out;
+    
+}
+
+h1{
+    position: fixed;
+    top: 0;
+    right: 50%;
+}
+
+h2{
+    position: fixed;
+    bottom: 0;
+    right: 50%;
+}
+  
+  

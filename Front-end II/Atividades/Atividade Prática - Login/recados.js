@@ -39,7 +39,7 @@ async function exibirRecados(idUsuario, page) {
   `;
 
     //BUCAR LOCALSTORAGE
-    let quero = localStorage.getItem("RESPOSTA", param.data);
+    // let quero = localStorage.getItem("RESPOSTA", param.data);
     console.log(quero);
 }
 

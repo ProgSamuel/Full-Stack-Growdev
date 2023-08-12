@@ -14,11 +14,12 @@ formularioLogin.addEventListener("submit", function (event) {
       senha: password,
     })
     .then(function (param) {
+      console.log('oi');
       // enviar userId para o localstorage
       // localStorage.setItem("userId", param.data.idUsuario);
       // logger.info("" + param.date.usuarioEncontrado)
       // localStorage.setItem("RESPOSTA", param.data);
-
+console.log(param);
       // alert("feito");
       console.log("Login successful!");
       window.location.href = "./recados.html";
