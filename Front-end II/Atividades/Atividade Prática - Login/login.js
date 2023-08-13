@@ -1,33 +1,31 @@
-const formularioLogin = document.getElementById("formularioLogin");
+const login = document.getElementById("formularioLogin");
 
-formularioLogin.addEventListener("submit", function (event) {
-  event.preventDefault();
+function loginUser() {
+  login.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    console.log('entrou em login');
+  
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  console.log(email, password);
-
-  axios
-    .post("https://api-recados-fnzo.onrender.com/login/", {
-      email: email,
+    try {
+      const res = await axios.post("https://api-recados-fnzo.onrender.com/login/", {
+        email: email,
       senha: password,
-    })
-    .then(function (param) {
-      console.log('oi');
-      // enviar userId para o localstorage
-      // localStorage.setItem("userId", param.data.idUsuario);
-      // logger.info("" + param.date.usuarioEncontrado)
-      // localStorage.setItem("RESPOSTA", param.data);
-console.log(param);
-      // alert("feito");
-      console.log("Login successful!");
-      window.location.href = "./recados.html";
-    })
-    .catch(function (param) {
-      console.log(param);
-      alert(`
-        Failed to login! 
-        ${param.response.data}`);
-    });
-});
+      });
+
+      setTimeout(function () {
+        const usuarioALogar = res.data.id_do_usuario;
+        console.log(usuarioALogar);
+        localStorage.setItem("userId", JSON.stringify(usuarioALogar));
+
+        window.location.href = "./recados.html";
+      }, 1500);
+    } catch (err) {
+      console.log(err.res.status);
+    }
+  });
+}
+
+loginUser();

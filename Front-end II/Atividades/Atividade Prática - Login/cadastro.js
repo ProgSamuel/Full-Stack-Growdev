@@ -20,3 +20,4 @@ formularioCadastro.addEventListener("submit", function (e) {
       alert(param.response.data);
     });
 });
+
