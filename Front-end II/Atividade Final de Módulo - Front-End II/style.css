@@ -1,4 +1,212 @@
-.opcao-selecionada {
-    background-color: #f0f0f0; 
-    cursor: pointer;
+body {
+  margin: 0;
+  font-size: 12pt;
+  min-height: 100vh;
+}
+
+#api-link {
+  height: 3em;
+  width: 3em;
+  margin: 0.5em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85vw;
+  margin: auto;
+}
+header {
+  margin: auto;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  color: #095513;
+  font-size: 2.5em;
+  font-weight: 900;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#inputInicial {
+  margin: auto;
+  width: 80%;
+  height: 3em;
+  border: 2.5px solid grey;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#campoBusca {
+  height: 90%;
+  width: 90%;
+}
+
+#btnBuscar {
+  margin: auto;
+  margin-top: 1em;
+  align-items: center;
+  color: #095513;
+  font-weight: 800;
+}
+
+#resultadoDaBusca {
+  display: flex;
+  margin: auto;
+}
+
+main img {
+  height: 10em;
+  width: 10em;
+  border-radius: 0.5em;
+}
+
+#home {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.personagem {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(219, 219, 208);
+  width: 28em;
+  height: 17em;
+  gap: 1em;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.personagem-imagem {
+  width: 50%;
+}
+
+.personagem-dados {
+  width: 50%;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.personagem-dados h2 {
+  font-size: 1.9em;
+  font-weight: 800;
+  color: #095513;
+}
+
+.personagem-dados p {
+  margin-left: em;
+}
+
+.personagem-dados p span {
+  color: grey;
+}
+
+#pag {
+  display: flex;
+  justify-content: center;
+  margin: 5em 0;
+  gap: 5%;
+  font-weight: 500;
+}
+
+#numero-pa {
+  font-weight: 700;
+}
+
+.btn-page {
+  color: #0c9d1f;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #095513;
+  font-weight: 600;
+}
+
+#imagem-Rick-and-Morty {
+  margin: auto;
+  display: flex;
+  height: auto;
+  width: 30%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+footer {
+  background-color: #1f2821;
+  width: 100%;
+  height: 15em;
+}
+
+footer span {
+  font-weight: 700;
+}
+
+#informacoes {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  gap: 5%;
+  color: white;
+}
+
+#desenvolvedor {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 2%;
+}
+
+#redesSociais {
+  margin: auto;
+  padding: 1.2em;
+}
+
+#desenvolvedor p {
+  margin: auto;
+}
+
+.circle-green {
+  margin-top: -5%;
+  width: 0.3em;
+  height: 0.3em;
+  display: inline;
+  background-color: rgba(0, 128, 0, 0.161);
+}
+
+.circle-red {
+  margin-top: -5%;
+  width: 0.3em;
+  height: 0.3em;
+  display: inline;
+  background-color: rgba(255, 0, 0, 0.161);
+}
+
+.circle-gray {
+  margin-top: -5%;
+  width: 0.3em;
+  height: 0.3em;
+  display: inline;
+  background-color: rgba(128, 128, 128, 0.161);
 }

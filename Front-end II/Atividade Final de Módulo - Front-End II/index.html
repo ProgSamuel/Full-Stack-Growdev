@@ -8,25 +8,64 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="https://rickandmortyapi.com/" target="_blank"
+      ><img
+        id="api-link"
+        src="./images/leilanis-attic-rick-and-morty-logo-28413130309681.webp"
+        alt="Imagem referente a API de Rick and Morty "
+    /></a>
 
-    <header style="background-color: antiquewhite;">
+    <header>
       <h1>Busca de Personagens - Rick and Morty</h1>
-      <input type="text" id="campoBusca"placeholder="Digite o nome do personagem"/>
-      <button id="btnBuscar">Buscar</button>
-      <div id="opcoesBusca"></div>
+      <div id="inputInicial">
+        <input
+          type="text"
+          id="campoBusca"
+          placeholder="Digite o nome do personagem"
+        />
+        <button id="btnBuscar">Buscar</button>
+      </div>
+      <section id="resultadoDaBusca">
+        <div id="opcoesBusca"></div>
+        <div id="resultado"></div>
+      </section>
     </header>
 
+    <main>
+      <div id="home"></div>
 
-    <main style="background-color: gray;">
-        <div id="resultado"></div>
+      <div>
+        <section id="pag">
+          <button class="btn-page" id="pagina-anterior">Anterior</button>
+          <p id="pagina-atual">Pagina atual <span id="numero-pa"> 1 </span></p>
+          <button class="btn-page" id="proxima-pagina">Proxima</button>
+        </section>
+
+        <img
+          id="imagem-Rick-and-Morty"
+          src="./images/].png"
+          alt="Rick and Morty"
+          srcset=""
+        />
+      </div>
     </main>
 
-    <footer style="background-color: blueviolet;">
+    <footer>
+      <section id="informacoes">
+        <p>PERSONAGENS: <span id="nper"> </span></p>
+        <p>LOCALIZAÇÕES: <span id="nloc"></span></p>
+        <p>EPISÓDIOS: <span id="nep"></span></p>
+      </section>
 
-      <p> PERSONAGENS:  <span id="nper"> </span> </p>
-      <p> LOCALIZAÇÕES:  <span id="nloc"></span> </p>
-      <p> EPISÓDIOS:  <span id="nep"></span> </p>
-
+      <section id="desenvolvedor">
+        <section id="redesSociais">
+          <button>GitHub</button>
+          <button>Linkedin</button>
+          <button>Email</button>
+        </section>
+        
+        <p>Desenvolvido por <span>Samuel Ramos </span> em 2023</p>
+      </section>
     </footer>
 
     <script src="./script.js"></script>

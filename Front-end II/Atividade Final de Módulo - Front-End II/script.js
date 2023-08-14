@@ -2,37 +2,46 @@ const apiUrl = "https://rickandmortyapi.com/api/";
 const campoBusca = document.getElementById("campoBusca");
 const resultado = document.getElementById("resultado");
 const opcoesBusca = document.getElementById("opcoesBusca");
+const homeDiv = document.getElementById("home");
+const pag = document.getElementById("pag");
+const numeroPa = document.getElementById("numero-pa");
+let currentPage = 1;
 
-axios.get(apiUrl + "character")
-    .then(response => {
-        const quantidadePersonagens = response.data.info.count;
-        const nper = document.getElementById('nper')
-        nper.innerHTML=`${quantidadePersonagens}`
-    })
-    .catch(error => {
-        console.error("Erro ao obter quantidade de personagens:", error);
-    });
+// informações da API - quantidade
+axios
+  .get(apiUrl + "character")
+  .then((response) => {
+    const quantidadePersonagens = response.data.info.count;
+    const nper = document.getElementById("nper");
+    nper.innerHTML = `${quantidadePersonagens}`;
+  })
+  .catch((error) => {
+    console.error("Erro ao obter quantidade de personagens:", error);
+  });
 
-axios.get(apiUrl + "location")
-    .then(response => {
-        const quantidadeLocalizacoes = response.data.info.count;
-        const nloc = document.getElementById('nloc')
-        nloc.innerHTML = `${quantidadeLocalizacoes}`
-    })
-    .catch(error => {
-        console.error("Erro ao obter quantidade de localizações:", error);
-    });
+axios
+  .get(apiUrl + "location")
+  .then((response) => {
+    const quantidadeLocalizacoes = response.data.info.count;
+    const nloc = document.getElementById("nloc");
+    nloc.innerHTML = `${quantidadeLocalizacoes}`;
+  })
+  .catch((error) => {
+    console.error("Erro ao obter quantidade de localizações:", error);
+  });
 
-    axios.get(apiUrl + "episode")
-    .then(response => {
-        const quantidadeEpisodios = response.data.info.count;
-        const nep = document.getElementById('nep')
-        nep.innerHTML = `${quantidadeEpisodios}`
-    })
-    .catch(error => {
-        console.error("Erro ao obter quantidade de episódios:", error);
-    });
+axios
+  .get(apiUrl + "episode")
+  .then((response) => {
+    const quantidadeEpisodios = response.data.info.count;
+    const nep = document.getElementById("nep");
+    nep.innerHTML = `${quantidadeEpisodios}`;
+  })
+  .catch((error) => {
+    console.error("Erro ao obter quantidade de episódios:", error);
+  });
 
+// campo de busca ----------------------------------------------------------------
 
 async function buscarNomeUltimoEpisodio(urlEpisodio) {
   try {
@@ -40,23 +49,33 @@ async function buscarNomeUltimoEpisodio(urlEpisodio) {
     const ultimoEpisodio = response.data;
     return ultimoEpisodio.name;
   } catch (error) {
-    console.error("Erro ao obter detalhes do último episódio:", error);
+    console.error("Erro ao obter detalhes do último episodio:", error);
     return "Erro ao obter detalhes do episódio";
   }
 }
 
 async function mostrarPersonagem(personagem) {
-  const ultimoEpisodioName = await buscarNomeUltimoEpisodio(
-    personagem.episode[personagem.episode.length - 1]
-  );
+  try {
+    const ultimoEpisodioName = await buscarNomeUltimoEpisodio(
+      personagem.episode[personagem.episode.length - 1]
+    );
 
-  resultado.innerHTML = `
-        <h2>${personagem.name}</h2>
-        <p>${personagem.status} - ${personagem.species}</p>
-        <p>Última localização conhecida:<br>${personagem.location.name}</p>
-        <p>Visto pela última vez em:<br>${ultimoEpisodioName}</p>
-        <img src="${personagem.image}" alt="${personagem.name}">
+    resultado.innerHTML = `
+      <h2>${personagem.name}</h2>
+      <p>${personagem.status} - ${personagem.species}</p>
+      <p>Última localização conhecida:<br>${personagem.location.name}</p>
+      <p>Visto pela última vez em:<br>${ultimoEpisodioName}</p>
+      <img src="${personagem.image}" alt="${personagem.name}">
     `;
+
+    campoBusca.innerHTML = "";
+
+
+    // opcoesBusca.textContent = ""
+  } catch (error) {
+    console.error("Erro ao mostrar personagem:", error);
+    resultado.innerHTML = "Ocorreu um erro ao mostrar o personagem.";
+  }
 }
 
 function buscarPersonagem(nome) {
@@ -90,6 +109,7 @@ function exibirOpcoesBusca(personagens) {
     opcao.addEventListener("click", () => {
       campoBusca.value = personagem.name;
       buscarPersonagem(personagem.name);
+      opcoesBusca.innerHTML = ""; // Remover opções após seleção
     });
     opcoesBusca.appendChild(opcao);
   });
@@ -97,10 +117,126 @@ function exibirOpcoesBusca(personagens) {
 
 campoBusca.addEventListener("input", () => {
   const nomePersonagem = campoBusca.value.trim();
-  if (nomePersonagem !== "") {
-    buscarPersonagem(nomePersonagem);
-  } else {
+  if (!nomePersonagem) {
     opcoesBusca.innerHTML = "";
     resultado.innerHTML = "";
+  } else {
+    opcoesBusca.innerHTML = ""; // Limpar opções de busca quando o usuário digitar algo
+    buscarPersonagem(nomePersonagem);
   }
 });
+
+// exibição dos personagens --------------------------------
+function criarElementoPersonagem(personagem, ultimoEpisodioName) {
+  const personagemDiv = document.createElement("div");
+  const textoDiv = document.createElement("div");
+  const imagemDiv = document.createElement("div");
+
+  let estadoPersonagem = "";
+  switch (personagem.status) {
+    case "Alive":
+      estadoPersonagem = "circle-green";
+      break;
+    case "Dead":
+      estadoPersonagem = "circle-red";
+      break;
+    default:
+      estadoPersonagem = "circle-gray";
+  }
+  
+
+
+  personagemDiv.classList.add("personagem");
+  textoDiv.classList.add("personagem-dados");
+  imagemDiv.classList.add("personagem-imagem");
+
+  textoDiv.innerHTML = `
+      <h2>${personagem.name}</h2>
+      <div> <p class=${estadoPersonagem}> ${personagem.status} - ${personagem.species}</p> </div>
+      <p> <span>Última localização conhecida:</span><br>${personagem.location.name}</p>
+      <p><span>Visto pela última vez em:</span><br>${ultimoEpisodioName}</p>
+    `;
+  imagemDiv.innerHTML = `<img src="${personagem.image}" alt="${personagem.name}">`;
+
+  personagemDiv.innerHTML += imagemDiv.innerHTML;
+  personagemDiv.appendChild(textoDiv);
+
+  return personagemDiv;
+}
+
+async function buscarPersonagensPaginados(pageNumber) {
+  try {
+    const pageSize = 20;
+    const response = await axios.get(
+      `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+    );
+    const data = response.data;
+
+    // Retornar a lista de personagens e informações de paginação
+    return {
+      personagens: data.results,
+      info: {
+        currentPage: data.info.page,
+        totalPages: Math.ceil(data.info.count / pageSize),
+      },
+    };
+  } catch (error) {
+    console.error("Erro ao buscar personagens paginados:", error);
+    return {
+      personagens: [],
+      info: {
+        currentPage: 1,
+        totalPages: 1,
+      },
+    };
+  }
+}
+
+async function carregarPersonagens(currentPage) {
+  try {
+    const { personagens, info } = await buscarPersonagensPaginados(currentPage);
+
+    for (const personagem of personagens) {
+      const ultimoEpisodioName = await buscarNomeUltimoEpisodio(
+        personagem.episode[personagem.episode.length - 1]
+      );
+      const personagemDiv = criarElementoPersonagem(
+        personagem,
+        ultimoEpisodioName
+      );
+      homeDiv.appendChild(personagemDiv);
+    }
+  } catch (error) {
+    console.error("Erro ao carregar personagens:", error);
+  }
+}
+
+// Paginação --------------------------------
+
+function carregarPaginaAnterior() {
+  if (currentPage > 1) {
+    currentPage--;
+    console.log(currentPage);
+    numeroPa.innerHTML = `${currentPage}`;
+    homeDiv.innerHTML = "";
+    carregarPersonagens(currentPage);
+  }
+}
+
+function carregarProximaPagina() {
+  currentPage++;
+  console.log(currentPage);
+  numeroPa.innerHTML = `${currentPage}`;
+
+  homeDiv.innerHTML = "";
+  carregarPersonagens(currentPage);
+}
+
+document
+  .getElementById("pagina-anterior")
+  .addEventListener("click", carregarPaginaAnterior);
+document
+  .getElementById("proxima-pagina")
+  .addEventListener("click", carregarProximaPagina);
+
+carregarPersonagens(currentPage);
