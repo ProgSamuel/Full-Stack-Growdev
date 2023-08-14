@@ -1,3 +1,12 @@
+:root {
+  --cor-primaria: #095513;
+  --cor-secundaria: grey;
+  --cor-terciaria: rgb(219, 219, 208);
+  --cor-footer: #1f2821;
+  --cor-quarta: white;
+  --tamanho-fonte: 16px;
+}
+
 body {
   margin: 0;
   font-size: 12pt;
@@ -8,6 +17,11 @@ body {
   height: 3em;
   width: 3em;
   margin: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 main {
@@ -26,7 +40,7 @@ header {
 }
 
 header h1 {
-  color: #095513;
+  color: var(--cor-primaria);
   font-size: 2.5em;
   font-weight: 900;
   text-align: center;
@@ -48,7 +62,7 @@ button {
   margin: auto;
   width: 80%;
   height: 3em;
-  border: 2.5px solid grey;
+  border: 2.5px solid var(--cor-secundaria);
   border-radius: 7px;
   display: flex;
   align-items: center;
@@ -56,21 +70,35 @@ button {
 }
 
 #campoBusca {
-  height: 90%;
+  height: 94%;
   width: 90%;
+  border-radius: inherit;
 }
 
 #btnBuscar {
   margin: auto;
-  margin-top: 1em;
+  height: 100%;
   align-items: center;
-  color: #095513;
+  color: var(--cor-primaria);
   font-weight: 800;
 }
 
 #resultadoDaBusca {
   display: flex;
-  margin: auto;
+  margin: -0.5em auto;
+  position: relative;
+  z-index: 1;
+  width: 70%;
+  padding: 2.5% 5%;
+  border-radius: 0.5em;
+  background-color: transparent !important;
+}
+
+#opcoesBusca {
+  width: 50%;
+}
+#resultado {
+  width: 50%;
 }
 
 main img {
@@ -84,10 +112,50 @@ main img {
   flex-wrap: wrap;
 }
 
+.personagem-resposta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor-terciaria);
+  width: 21em;
+  height: 35em;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.2em;
+  justify-content: start;
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px 3px rgba(0, 0, 0, 0.1);
+}
+.personagem-resposta-img {
+  width: 88%;
+  height: 50%;
+  margin: auto;
+  border-radius: inherit;
+}
+
+.personagem-resposta-desc {
+  width: 88%;
+  margin: auto;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.personagem-resposta-desc h2 {
+  font-size: 1.9em;
+  font-weight: 800;
+  color: var(--cor-primaria);
+  text-align: center;
+  margin-top: -1em;
+}
+
+.personagem-resposta-desc p span {
+  color: var(--cor-secundaria);
+}
+
 .personagem {
   display: flex;
   flex-direction: row;
-  background-color: rgb(219, 219, 208);
+  background-color: var(--cor-terciaria);
   width: 28em;
   height: 17em;
   gap: 1em;
@@ -106,6 +174,8 @@ main img {
 
 .personagem-dados {
   width: 50%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   font-size: 0.8em;
   font-weight: bold;
 }
@@ -113,34 +183,36 @@ main img {
 .personagem-dados h2 {
   font-size: 1.9em;
   font-weight: 800;
-  color: #095513;
-}
-
-.personagem-dados p {
-  margin-left: em;
+  color: var(--cor-primaria);
 }
 
 .personagem-dados p span {
-  color: grey;
+  color: var(--cor-secundaria);
 }
 
 #pag {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 5em 0;
   gap: 5%;
   font-weight: 500;
 }
 
 #numero-pa {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .btn-page {
-  color: #0c9d1f;
+  color: var(--cor-primaria);
   padding: 0.5em 1em;
-  border-bottom: 1px solid #095513;
   font-weight: 600;
+  font-size: 1em;
+}
+
+#pagina-atual {
+  display: flex;
+  align-items: end;
+  margin-top: 5em;
 }
 
 #imagem-Rick-and-Morty {
@@ -153,7 +225,7 @@ main img {
 }
 
 footer {
-  background-color: #1f2821;
+  background-color: var(--cor-footer);
   width: 100%;
   height: 15em;
 }
@@ -167,11 +239,11 @@ footer span {
   justify-content: center;
   padding-top: 2em;
   gap: 5%;
-  color: white;
+  color: var(--cor-quarta);
 }
 
 #desenvolvedor {
-  color: white;
+  color: var(--cor-quarta);
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -183,30 +255,32 @@ footer span {
   padding: 1.2em;
 }
 
+i {
+  color: var(--cor-quarta);
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-size: 1.5em;
+}
+
+i:hover {
+  font-size: 2.5em;
+  color: #12ADC5;
+}
+
 #desenvolvedor p {
   margin: auto;
 }
 
-.circle-green {
-  margin-top: -5%;
-  width: 0.3em;
-  height: 0.3em;
-  display: inline;
-  background-color: rgba(0, 128, 0, 0.161);
+.status {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.7em;
+  height: 0.9em;
 }
-
-.circle-red {
-  margin-top: -5%;
-  width: 0.3em;
-  height: 0.3em;
-  display: inline;
-  background-color: rgba(255, 0, 0, 0.161);
-}
-
-.circle-gray {
-  margin-top: -5%;
-  width: 0.3em;
-  height: 0.3em;
-  display: inline;
-  background-color: rgba(128, 128, 128, 0.161);
+.exibirStatus {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background-color: var(--cor-secundaria);
 }

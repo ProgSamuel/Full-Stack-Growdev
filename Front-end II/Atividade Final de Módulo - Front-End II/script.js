@@ -60,16 +60,39 @@ async function mostrarPersonagem(personagem) {
       personagem.episode[personagem.episode.length - 1]
     );
 
+    let estadoPersonagem = "";
+    switch (personagem.status) {
+      case "Alive":
+        estadoPersonagem = "background-color: green";
+        break;
+      case "Dead":
+        estadoPersonagem = "background-color: red";
+        break;
+      default:
+        estadoPersonagem = "background-color: gray";
+    }
+
+    
+
     resultado.innerHTML = `
-      <h2>${personagem.name}</h2>
-      <p>${personagem.status} - ${personagem.species}</p>
-      <p>Última localização conhecida:<br>${personagem.location.name}</p>
-      <p>Visto pela última vez em:<br>${ultimoEpisodioName}</p>
-      <img src="${personagem.image}" alt="${personagem.name}">
+    <div class="personagem-resposta">
+    <img class="personagem-resposta-img" src="${personagem.image}" alt="${personagem.name}">
+    <div class="personagem-resposta-desc"> 
+    <h2>${personagem.name}</h2>
+      <div class="status">
+        <div class="exibirStatus" style="${estadoPersonagem}"></div>
+          <p>
+          ${personagem.status} - ${personagem.species}
+          </p>
+      </div>
+      <p> <span>Última localização conhecida:</span><br>${personagem.location.name}</p>
+      <p> <span>Visto pela última vez em:</span><br>${ultimoEpisodioName}</p>
+      </div> 
+      </div>
     `;
 
-    campoBusca.innerHTML = "";
 
+    campoBusca.innerHTML = "";
 
     // opcoesBusca.textContent = ""
   } catch (error) {
@@ -135,16 +158,14 @@ function criarElementoPersonagem(personagem, ultimoEpisodioName) {
   let estadoPersonagem = "";
   switch (personagem.status) {
     case "Alive":
-      estadoPersonagem = "circle-green";
+      estadoPersonagem = "background-color: green";
       break;
     case "Dead":
-      estadoPersonagem = "circle-red";
+      estadoPersonagem = "background-color: red";
       break;
     default:
-      estadoPersonagem = "circle-gray";
+      estadoPersonagem = "background-color: gray";
   }
-  
-
 
   personagemDiv.classList.add("personagem");
   textoDiv.classList.add("personagem-dados");
@@ -152,7 +173,12 @@ function criarElementoPersonagem(personagem, ultimoEpisodioName) {
 
   textoDiv.innerHTML = `
       <h2>${personagem.name}</h2>
-      <div> <p class=${estadoPersonagem}> ${personagem.status} - ${personagem.species}</p> </div>
+      <div class="status">
+        <div class="exibirStatus" style="${estadoPersonagem}"></div>
+          <p>
+          ${personagem.status} - ${personagem.species}
+          </p>
+      </div>
       <p> <span>Última localização conhecida:</span><br>${personagem.location.name}</p>
       <p><span>Visto pela última vez em:</span><br>${ultimoEpisodioName}</p>
     `;
