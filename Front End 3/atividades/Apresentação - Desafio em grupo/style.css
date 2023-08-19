@@ -6,6 +6,8 @@
   font-family: "Sora", sans-serif;
 } */
 
+/* adicionar fonte baixada */
+
 body {
   color: white;
   background: url("./Background.png") no-repeat center center fixed;
@@ -16,21 +18,28 @@ body {
   justify-content: center;
 }
 
+#home, #descricao, #elenco {
+  visibility: hidden;
+}
+
 #home {
   width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  animation: animation-h1 3s;
-
 }
 #olhos {
-    position: relative;
+  position: fixed;
+  left: 45%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
   width: 100px;
   /* height: 100px; */
   margin: auto;
   animation: animation-olhos 3s infinite;
+  z-index: 1;
 }
 
 @keyframes animation-olhos {
@@ -60,28 +69,193 @@ h1 {
   margin: auto;
   color: rgb(136, 8, 8);
   font-family: "Rubik Wet Paint", cursive;
+  font-size: 7em;
   text-align: center;
+  animation: animation-h1 3s;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-family: "Rubik Wet Paint", cursive;
+  letter-spacing: 0.1em;
 }
 
 @keyframes animation-h1 {
-0%{
-font-size: 2em;
-}
-20%{
+  0% {
+    font-size: 2em;
+  }
+  20% {
     font-size: 3em;
-}
-40%{
+  }
+  40% {
     font-size: 4em;
-}
-60%{
+  }
+  60% {
     font-size: 5em;
-}
-80%{
+  }
+  80% {
     font-size: 6em;
-}
-100%{
+  }
+  100% {
     font-size: 7em;
-    margin-bottom: 2em;
-}
+  }
 }
 
+button {
+  display: flex;
+  margin: auto;
+  z-index: 2;
+  background-color: rgb(136, 8, 8);
+}
+
+.container {
+  width: 80%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.container h2 {
+  text-align: center;
+  color: rgb(136, 8, 8);
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  margin: 2em;
+}
+
+.container ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.container li {
+  margin-bottom: 5px;
+}
+
+.container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+  /* margin-bottom: 20px; */
+  margin: auto;
+  padding: 1.3em;
+  border-radius: 3em;
+}
+.video{
+display: flex;
+justify-content: center;}
+#descricao{
+  display: flex; 
+  height: 60vh;
+  margin-top: 5em
+}
+
+#sinopse{
+  width: 50%;
+}
+#trailer{
+  width: 50%;
+}
+
+#fotos{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+
+}
+
+#elenco img {
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+  transform: rotate(3deg);
+  transform-origin: top right;
+  transition: transform 0.5s, flex 0.6s, opacity 0.6s;
+  aspect-ratio: 9 / 16;
+  min-width: 0;
+  flex: 1 1 10px;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+#elenco img:hover {
+  flex: 1 1 100px;
+  opacity: 1;
+  transform: rotate(0deg); /* Reverte a rotação ao passar o mouse */
+}
+
+
+#elenco h2{
+  margin: 1em;
+}
+
+.animation-word {
+  /* Estilos para o h1 completo, se necessário */
+}
+
+.letter {
+transition: .04s;
+transform: translateX(0);
+cursor: grab;
+color: rgb(136, 8, 8);
+}
+
+.letter:hover {
+background: -webkit-linear-gradient(to bottom, red, transparent);
+background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.467));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Exemplo de animação para a classe animation-word */
+.animation-word {
+  animation: animation-h1 3s;
+}
+
+@keyframes animation-h1 {
+  0% {
+    font-size: 2em;
+  }
+  20% {
+    font-size: 3em;
+  }
+  40% {
+    font-size: 4em;
+  }
+  60% {
+    font-size: 5em;
+  }
+  80% {
+    font-size: 6em;
+  }
+  100% {
+    font-size: 7em;
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(136, 8, 8);
+  height: 15em;
+}
+footer h2{
+padding: 1em;
+}
+ul{
+  list-style-type: none;
+  font-weight: 400;
+  font-family: "Rubik Wet Paint", cursive;
+  display: flex;
+  flex-direction:row; 
+  justify-content: center;
+  gap: 1em;
+}
