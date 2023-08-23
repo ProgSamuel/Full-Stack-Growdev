@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site - Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-dark border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid p-2">
+          <i class="bi bi-globe-americas " style="color:white"></i>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Promoções </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Continentes
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">África</a></li>
+                  <li><a class="dropdown-item" href="#">América</a></li>
+                  <li><a class="dropdown-item" href="#">Ásia</a></li>
+                  <li><a class="dropdown-item" href="#">Europa</a></li>
+                  <li><a class="dropdown-item" href="#">Oceania</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sua conta
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"> Acessar </a></li>
+                  <li><a class="dropdown-item" href="#">Dúvidas </a></li>
+                  <li><a class="dropdown-item" href="#"> Contatos rápidos</a></li>
+                  <li><a class="dropdown-item" href="#"> Seguro </a></li>
+                  <li><a class="dropdown-item" href="#"> cupoms</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                
+                </ul>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner" style="width: 100vw; height: 75vh;">
+          <div class="carousel-item active">
+                       <img src="./images/rj.jpg" class="d-block w-100" alt="...">
+
+              <title>Placeholder</title>
+              <rect width="100%" height="60%" fill="#666"></rect>
+              <text x="50%" y="50%" fill="#444" dy=".3em">Um slide</text>
+            </svg>
+          </div>
+          <div class="carousel-item" style="width: 100vw; height: 75vh;">
+            <img src="./images/chile.jpg" class="d-block w-100" alt="...">
+              <title>Placeholder</title>
+              <rect width="100%" height="60%" fill="#666"></rect>
+              <text x="50%" y="50%" fill="#444" dy=".3em">Dois slide</text>
+            </svg>
+          </div>
+          <div class="carousel-item" style="width: 100vw; height: 75vh;">
+                       <img src="./images/praga.jpg" class="d-block w-100" alt="...">
+
+              <title>Placeholder</title>
+              <rect width="100%" height="60%" fill="#666"></rect>
+              <text x="50%" y="50%" fill="#444" dy=".3em">Três slide</text>
+            </svg>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container text-center">
+        <div class="row">
+          <h2 class="pt-4"> Confira alguns destinos </h2>
+          <div class="col-12 col-md-4">
+            <div class="card mt-5">
+              <img src="./images/promo/gramado.jpg" alt="">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title"> Gramado - RS</h5>
+                <p class="card-text">
+                  Venha conhecer as maravilhas e experimentar um pouco da cultura local. 
+                  Se dê esse presente, e venha conosco.
+                </p>
+                <a href="#" class="btn btn-primary">Compre agora!</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card mt-5">
+                            <img src="./images/promo/ba.jpg" alt="">
+
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title"> Salvador - BA</h5>
+                <p class="card-text">
+                  Venha conhecer as maravilhas e experimentar um pouco da cultura local. 
+                  Se dê esse presente, e venha conosco.
+                </p>
+                <a href="#" class="btn btn-primary">Compre agora!</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="card mt-5">
+                            <img src="./images/promo/floripa.jpg" alt="">
+
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title"> Florianópolis - SC</h5>
+                <p class="card-text">
+                  Venha conhecer as maravilhas e experimentar um pouco da cultura local. 
+                  Se dê esse presente, e venha conosco.
+                </p>
+                <a href="#" class="btn btn-primary">Compre agora!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid text-bg-dark mt-5">
+        <div class="row">
+          <div class="col">
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+                  <div class="p-5">
+                    <h1>Descubra as Maravilhas do Brasil: Sua Aventura Inesquecível Espera Por Você!</h1>
+                    
+                    <p>🇧🇷 Brasil: Da natureza à cultura, uma experiência enriquecedora que você não pode perder! 🇧🇷</p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="display-6">Perguntas frequentes</h1>
+          </div>
+
+          <div class="col">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                  Dicas Práticas e Informações Úteis:
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It
+                    is shown by default, until the collapse plugin adds the
+                    appropriate classes that we use to style each element. These
+                    classes control the overall appearance, as well as the
+                    showing and hiding via CSS transitions. You can modify any
+                    of this with custom CSS or overriding our default variables.
+                    It's also worth noting that just about any HTML can go
+                    within the <code>.accordion-body</code>, though the
+                    transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                  Cultura e Experiências Locais:
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong>
+                    It is hidden by default, until the collapse plugin adds the
+                    appropriate classes that we use to style each element. These
+                    classes control the overall appearance, as well as the
+                    showing and hiding via CSS transitions. You can modify any
+                    of this with custom CSS or overriding our default variables.
+                    It's also worth noting that just about any HTML can go
+                    within the <code>.accordion-body</code>, though the
+                    transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                  Destinos e Natureza:
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It
+                    is hidden by default, until the collapse plugin adds the
+                    appropriate classes that we use to style each element. These
+                    classes control the overall appearance, as well as the
+                    showing and hiding via CSS transitions. You can modify any
+                    of this with custom CSS or overriding our default variables.
+                    It's also worth noting that just about any HTML can go
+                    within the <code>.accordion-body</code>, though the
+                    transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-fluid text-bg-dark mt-5">
+        <div class="row">
+          <div class="col text-center">
+            <div class="p-5">
+              <small>Criado pelos growdevers.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
