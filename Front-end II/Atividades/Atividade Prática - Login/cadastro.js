@@ -21,3 +21,5 @@ formularioCadastro.addEventListener("submit", function (e) {
     });
 });
 
+
+
