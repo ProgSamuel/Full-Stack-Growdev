@@ -1,8 +1,9 @@
-// console.log('oi aqui');
 
 // 1. Crie uma função que receba 2 números e retorne um objeto
 // contendo a média e também um indicador booleano de
 // aprovado/reprovado. Considere aprovado com média >= 6.
+
+import { Console } from "console";
 
 let numero1: number = 5
 let numero2: number = 5
@@ -64,6 +65,68 @@ console.log(`Questão 2: A média é => ${resultado}`);
 // uma saída. Caso ao lançar uma saída e não tiver saldo, precisa dar
 // um erro ou avisar.
 
-// const carteira =  {
-//     saldo: numbe
-// }
+// criar objeto contendo : saldo, transações,
+// lançar saída
+// verificar saída 
+
+
+class carteira {
+  "saldo" : number;
+  "transacoes" : number;
+  
+  constructor(saldo = 0 , transacoes = 0) {
+    this.saldo = saldo,
+    this.transacoes = transacoes;
+
+    // const result = saldo + transacoes;
+    // console.log(result);
+    
+  }
+  
+  verificarSaldo():void {
+      let resultado = this.saldo += this.transacoes;
+
+      if(this.transacoes > 0) {
+        console.log(`Questão 3: A sua entrada foi de ${this.transacoes}$ e o seu saldo atual é de: ${resultado}$`);
+      } else{
+        console.log(`Questão 3: A sua saída foi de ${this.transacoes}$ e o seu saldo atual é de: ${resultado}$`);
+      }
+    
+  }
+}
+
+const carteiraAlice = new carteira(120, -30)
+carteiraAlice.verificarSaldo();
+
+// 4. Crie um programa para cadastrar, listar e excluir produtos de uma
+// lista com tipagem de Produto.
+
+const produtos: Array<string> = [];
+
+class Produto {
+  nomeDoProduto: string;
+
+  constructor(nomeDoProduto: string) {
+    this.nomeDoProduto = nomeDoProduto;
+  }
+
+  cadastrar() {
+    produtos.push(this.nomeDoProduto); 
+    console.log(JSON.stringify(produtos));
+  }
+
+}
+
+const prodMacarrao = new Produto("macarrao");
+const prodQueijo = new Produto("queijo");
+
+prodMacarrao.cadastrar();
+prodQueijo.cadastrar();
+
+function listar (): void {
+  console.log(` Lista de produtos: ${produtos}`)
+}
+
+listar()
+
+
