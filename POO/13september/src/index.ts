@@ -35,29 +35,41 @@ interface notasEPeso {
 }
 
 const notas:notasEPeso[] = [
-    {nota:1 , peso:4 },
-    {nota:2 , peso:2 },
-    {nota:3 , peso:5 }
+    {nota:1 , peso:5 },
+    {nota:2 , peso:7 },
+    {nota:3 , peso:5 },
+    {nota:4 , peso:5 }
 ]
-
 
 function calcularMediaNota (lista:notasEPeso[]) : number{
 
     let somaItem = 0
+    let pesoNota = 0
 
     for ( const item of lista) {
-       somaItem =+ (item.nota * item.peso)
+       somaItem += (item.nota * item.peso)
+       pesoNota += item.peso
     }
 
-    console.log( somaItem)
-    const media = somaItem / lista.length
+    const media = somaItem / pesoNota
     
     return media
 }
 
+function comReduce (lista:notasEPeso[]):number{
 
-const resultado:number = calcularMediaNota(notas)
+  const notasComReduce = notas.reduce((guardarNotas, nota) => {return guardarNotas + (nota.peso * nota.nota)},0)
+  const pesoComReduce = notas.reduce((guardarNotas,nota) => {return guardarNotas + (nota.peso)},0)
+  const mediaComReduce = notasComReduce/pesoComReduce
+
+  return mediaComReduce
+}
+
+const resultadoComReduce = (comReduce(notas)).toFixed(2)
+const resultado = (calcularMediaNota(notas)).toFixed(2)
+
 console.log(`Questão 2: A média é => ${resultado}`);
+console.log(`Questão 2: A média com reduce é => ${resultadoComReduce}`);
 
 console.log();
 
@@ -105,8 +117,6 @@ carteiraAlice.verificarSaldo();
 // lista com tipagem de Produto.
 console.log();
 console.log("Questão 4");
-console.log();
-
 
 const produtos: Array<Produto> = []; 
 let id: number = 0;
@@ -164,7 +174,6 @@ console.log();
 console.log('Questão 5');
 
 const employes:any = []
-
 type User = {
   name : string,
   age : (number),
@@ -173,8 +182,8 @@ type User = {
 }
 
 const user1:User = {name:"Samuel", age: 22, occupation: "Front-End Developer", wage: 10000}
-const user2:User = {name:"Victor", age: 28, occupation: "Back-End Developer", wage: 10000}
-const user3:User = {name:"Juliete", age: 25, occupation: "Analista de dados"}
+const user2:User = {name:"alguem", age: 28, occupation: "Back-End Developer", wage: 10000}
+const user3:User = {name:"alguem", age: 25, occupation: "Analista de dados"}
 
 function displayEmployes():void{
   
