@@ -1,7 +1,7 @@
 export class BombaCombustivel {
-    'tipoCombustivel': string
-    'valorLitro': number = 5.5
-    'quantidadeCombustivel': number
+    tipoCombustivel: string
+    valorLitro: number = 5.5
+    quantidadeCombustivel: number
 
     constructor(tipoCombustivel: string, quantidadeCombustivel: number){
         this.tipoCombustivel = tipoCombustivel
