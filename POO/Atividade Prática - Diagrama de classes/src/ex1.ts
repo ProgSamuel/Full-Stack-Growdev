@@ -1,30 +1,9 @@
 class Item {
-    valor: 'double' 
-    nome: string;
-    descicao: string; 
-
-    constructor(valor: 'double', nome: string, descricao: string) {
-        this.valor = valor;
-        this.nome = nome;
-        this.descicao = descricao;
-    }
+    constructor(public valor: double, public nome: string, public descricao: string) {}
 }
 
 class Pedido {
-    itens: Array<Item>;
-    valorTotal: 'double'; 
-    constructor(itens: Array<Item>, valorTotal: 'double') {
-        this.itens = itens;
-        this.valorTotal = valorTotal;
-    }
-    mostrar(){
-        console.log(this.itens);
-    }
-    valortotal(){
-        let valorTotalA:number = 0
-        for (const i of this.itens) {
-            valorTotalA += this.valorTotal
-        }
-        return valorTotalA
-    }
+    constructor(public itens: Array<Item>, public valorTotal:double) {}
 }
+
+type double = {}
