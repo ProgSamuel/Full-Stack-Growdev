@@ -1,0 +1,31 @@
+h1 {
+  font-size: 2.2em;
+  color: white;
+}
+
+.cardImg {
+  width: 10em;
+}
+
+ul{
+  display: flex;
+  gap: 2em;
+}
+
+p{
+  margin-left: 2em;
+}
+
+section{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 6em;
+}
+
+div > svg {
+margin: 1em;
+}
+
+section:last-of-type{
+  color: blue;
+}
