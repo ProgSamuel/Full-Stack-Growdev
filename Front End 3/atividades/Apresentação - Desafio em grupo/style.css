@@ -198,9 +198,6 @@ justify-content: center;}
   margin: 1em;
 }
 
-.animation-word {
-  /* Estilos para o h1 completo, se necessário */
-}
 
 .letter {
 transition: .04s;
@@ -212,7 +209,6 @@ color: rgb(136, 8, 8);
 .letter:hover {
 background: -webkit-linear-gradient(to bottom, red, transparent);
 background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.467));
--webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
