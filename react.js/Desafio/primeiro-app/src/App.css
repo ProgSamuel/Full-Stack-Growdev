@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+a{ 
+    text-decoration: none;
+    color:  #3CB371;
+}
+
+.imgLogo{
+    height: 3em;
+    border-radius: 50%;
+}
+
+.galeria{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 40vh;
+    }
+
+   
