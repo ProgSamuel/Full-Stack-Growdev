@@ -1,5 +1,5 @@
 // import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 // import Photo from './Photo';
 
 export const GalleryContainer = styled.div`
@@ -15,6 +15,3 @@ export const PhotoContainer = styled.img`
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
-
-
-
