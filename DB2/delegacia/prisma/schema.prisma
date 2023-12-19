@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Criminoso {
+  id   String @id @default(uuid()) @db.Uuid
+  name String @db.VarChar(50)
+  age  Int    @db.SmallInt
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  crime Crime[]
+
+  @@map("criminosos")
+}
+
+model Crime {
+  id          String @id @default(uuid()) @db.Uuid
+  description String @db.VarChar(350)
+
+  Criminoso   Criminoso @relation(fields: [criminosoId], references: [id])
+  criminosoId String    @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  armas Arma[]
+
+  @@map("crimes")
+}
+
+model Arma {
+  id   String @id @default(uuid()) @db.Uuid
+  type String @db.VarChar(100)
+
+  Crime   Crime  @relation(fields: [crimeId], references: [id])
+  crimeId String @db.Uuid
+
+  @@map("armas")
+}
